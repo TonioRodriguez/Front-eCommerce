@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import React, { useContext } from 'react'
 import { useForm } from "react-hook-form";
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
@@ -6,8 +6,8 @@ import { UserContext } from '../../context/UserContext';
 
 const Login = () => {
   let navigate = useNavigate();
-  const url = 'http://localhost:4000/api/v1/auth/login';
-  const url2 = 'http://localhost:4000/api/v1/users/me';
+  const url = 'http://localhost:3000/api/v1/auth/login';
+  const url2 = 'http://localhost:3000/api/v1/users/me';
   const { user, setUser } = useContext(UserContext)
 
   const {
@@ -21,9 +21,12 @@ const Login = () => {
     axios.post(url, data)
       .then(res => {
         console.log(res.data)
-        // setUser(res.data)
-        return (
-          axios.get(url2, {
+        //setUser(res.data)
+        //axios.post(url2, res.data)
+        //.then(res =>{
+        //})
+        
+        return (axios.get(url2, {
             headers: {
               'Access-Control-Allow-Origin': '*',
               Authorization: `Bearer ${res.data.token}`
@@ -32,8 +35,8 @@ const Login = () => {
             console.log(res.data)
             setUser(res.data)
             navigate('/profile', { replace: true })
-          })
-        )
+          }))
+        
       })
   }
 

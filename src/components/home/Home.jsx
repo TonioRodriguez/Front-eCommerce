@@ -7,6 +7,9 @@ const Home = () => {
   const isLoggedIn = !!user;
   return (
     <div>
+      <div>
+        {user}
+      </div>
       <pre>
         {JSON.stringify(user, null, 3)}
       </pre>
