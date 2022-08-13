@@ -1,6 +1,6 @@
 import { useContext } from "react"
-import { UserContext } from "../../context/UserContext";
-import Checkout from "../CheckoutPage/BtnCheckout";
+import { UserContext } from "../context/UserContext";
+import Checkout from "./BtnCheckout";
 
 const Home = () => {
   const { user } = useContext(UserContext);

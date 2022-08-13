@@ -1,12 +1,12 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom';
 import Home from './components/Home';
-import SignUp from './components/SignUp/SignUp';
-import Login from './components/Login/Login';
+import SignUp from './components/SignUp';
+import Login from './components/Login';
 import { UserProvider } from './context/UserProvider';
-import Navbar from './components/Navbar/Navbar';
-import Profile from './components/Profile/Profile';
-import CheckoutPage from './components/CheckoutPage/CheckoutPage'
+import Navbar from './components/Navbar';
+import Profile from './components/Profile';
+import CheckoutPage from './components/CheckoutPage'
 import { PayPalScriptProvider } from '@paypal/react-paypal-js';
 
 const App = () => {
