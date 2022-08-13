@@ -6,20 +6,17 @@ import Login from './components/Login/Login';
 import { UserProvider } from './context/UserProvider';
 import Navbar from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile';
+import CheckoutPage from './components/CheckoutPage/CheckoutPage'
 import { PayPalScriptProvider } from '@paypal/react-paypal-js';
 
 const App = () => {
   return (
 
     <>
-      <div>
-      <Login />
-      </div>
-
       <UserProvider>
         <PayPalScriptProvider
         options={{
-          "client-id": "AYEkdDboj7foFTwEpUaUz6K7TWW_cnl92WBSmCwpt02es1dYtT8VXOiFTW5SpAZTUPHFWLiiGIkrn1Kr",
+          "client-id": process.env.PAYPAL,
           components: "buttons",
           currency: "USD"
         }}
@@ -29,6 +26,7 @@ const App = () => {
             <Route path='/' element={<Home />} />
             <Route path='/login' element={<Login />} />
             <Route path='/profile' element={<Profile />} />
+            <Route path='/checkoutpage' element={<CheckoutPage />} />
             <Route path='/signup' element={<SignUp />} />
           </Routes>
         </PayPalScriptProvider>

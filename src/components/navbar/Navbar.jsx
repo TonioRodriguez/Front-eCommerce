@@ -22,6 +22,16 @@ const Navbar = () => {
                       to="/signup">
                       SignIn
                   </NavLink>
+                  <NavLink 
+                      className={ ({ isActive }) => `nav-link ${ isActive ? 'active' : '' }`}
+                      to="/profile">
+                      Perfil
+                  </NavLink>
+                  <NavLink 
+                      className={ ({ isActive }) => `nav-link ${ isActive ? 'active' : '' }`}
+                      to="/checkout">
+                      Checkout
+                  </NavLink>
                 </ul>
             </div>
         </div>

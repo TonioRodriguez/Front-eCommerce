@@ -27,7 +27,7 @@ const Home = () => {
           (
             <div>
               <h1>Home</h1>
-              <p>You are not logged in</p>
+              <p>No obtuviste acceso :/</p>
             </div>
           )
 

@@ -2,19 +2,21 @@ import React from 'react'
 import {useForm} from 'react-hook-form';
 import axios from 'axios'
 
-const{
+
+
+const SignUp = () => {
+
+  const{
     register,
     handleSubmit,
     formState: { errors },
-} = useForm()
-
-const SignUp = () => {
+  } = useForm()
 
   const url = 'http://localhost:3000/api/v1/auth/register';
   
   const onSubmit = data => {
     console.log(data)
-    //axios.post(url, data)
+    axios.post(url, data)
   }
   
     return (
